@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using Newtonsoft.Json.Linq;
-using Sirenix.Utilities;
 using UniRx;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
@@ -74,10 +73,15 @@ namespace Game.Serialization.Notion
         private List<Tuple<string, IDataDeserializer, Action<IList>>> CreateDeserializers()
         {
             var tables = CreateDeserializersList();
-            tables
+            var deserializers = tables
                 .Select(table => table.Item2)
                 .OfType<INotionDeserializer>()
-                .ForEach(InitDeserializer);
+                .ToList();
+            
+            for (var i = 0; i < deserializers.Count; i++)
+            {
+                InitDeserializer(deserializers[i]);
+            }
 
             return tables;
         }
@@ -138,9 +142,10 @@ namespace Game.Serialization.Notion
                 var didEnd = false;
                 chainedObservable.Subscribe(result =>
                 {
-                    Enumerable
-                        .Range(0, tables.Count)
-                        .ForEach(HandleDeserialization);
+                    for (var i = 0; i < tables.Count; i++)
+                    {
+                        HandleDeserialization(i);
+                    }
                     
                     didEnd = true;
                     

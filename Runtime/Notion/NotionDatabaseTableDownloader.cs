@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using Newtonsoft.Json.Linq;
-using Sirenix.Utilities;
 using UniRx;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -72,7 +71,11 @@ namespace Game.Serialization.Notion
                     onNext: (update) =>
                     {
                         list.AddRange(update.Item2);
-                        resultsAcrossCursors.AddRange(update.Item1);
+
+                        foreach (var item in update.Item1)
+                        {
+                            resultsAcrossCursors.Add(item);                             
+                        }
                     },
                     onError: observer.OnError
                 ), cancellationToken);
