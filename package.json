@@ -1,0 +1,16 @@
+{
+  "name": "com.deathbygravitystudio.unitynotiondownloader",
+  "version": "0.1.0",
+  "displayName": "Unity Notion Downloader",
+  "description": "A Unity Editor extension for downloading notion data.",
+  "unity": "2021.3",
+  "author": {
+    "name": "Death By Gravity Studio",
+    "email": "contact@deathbygravitystudio.com",
+    "url": "https://deathbygravitystudio.com"
+  },
+  "keywords": [ "unity", "notion" ],
+  "dependencies": {
+    "com.deathbygravitystudio.unirx": "https://github.com/denchi/UniRx.git"
+  }
+}
