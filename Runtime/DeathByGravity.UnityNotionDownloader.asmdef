@@ -1,0 +1,7 @@
+{
+	"name": "DeathByGravity.UnityNotionDownloader",
+	"references": [
+		"DeathByGravity.UniRx"
+	],
+	"autoReferenced": true
+}
