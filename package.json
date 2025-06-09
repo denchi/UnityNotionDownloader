@@ -10,6 +10,7 @@
   },
   "keywords": [ "unity", "notion" ],
   "dependencies": {
-    "com.deathbygravitystudio.unirx": "https://github.com/denchi/UniRx.git"
+    "com.deathbygravitystudio.unirx": "https://github.com/denchi/UniRx.git",
+    "com.unity.nuget.newtonsoft-json": "3.0.1"
   }
 }

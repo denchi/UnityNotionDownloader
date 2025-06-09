@@ -1,7 +1,7 @@
 using NUnit.Framework;
-using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using Game.Serialization.Notion;
+using Newtonsoft.Json.Linq;
 
 public class NotionValueReaderTests
 {
