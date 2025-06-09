@@ -1,0 +1,10 @@
+{
+    "name": "DeathByGravity.UnityNotionDownloader.Tests",
+    "references": [
+        "DeathByGravity.UnityNotionDownloader"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": ["Editor"]
+}
